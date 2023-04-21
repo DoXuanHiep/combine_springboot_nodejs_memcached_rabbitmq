@@ -1,0 +1,19 @@
+{
+  "name": "handle_queue_cache_nodejs",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hiep",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "amqplib": "^0.10.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "memcached": "^2.2.2",
+    "mysql2": "^3.2.3",
+    "sequelize": "^6.31.0"
+  }
+}
