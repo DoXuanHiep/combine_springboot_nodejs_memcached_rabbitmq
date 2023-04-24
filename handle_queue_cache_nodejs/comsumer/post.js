@@ -24,6 +24,8 @@ exports.createChannel = (error1, channel) => {
         keys.forEach((key) => {
           channel.bindQueue(q.queue, exchange, key);
         });
+
+        channel.prefetch(2);
   
         channel.consume(q.queue, (msg) => {
           const receivedKey = msg.fields.routingKey;
@@ -35,8 +37,12 @@ exports.createChannel = (error1, channel) => {
           } else if (receivedKey == 'like_post') {
             postController.likePost(data)
           }
+          setTimeout(function() {
+            console.log(" [x] Done");
+            channel.ack(msg); // acknowledge the message
+          }, 5000); // simulate a message processing time of 5 seconds
         }, {
-          noAck: true,
+          noAck: false,
         });
       });
 }

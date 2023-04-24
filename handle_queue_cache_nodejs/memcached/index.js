@@ -1,7 +1,7 @@
 const post = require('./post')
 
 const handleMemcached = () => {
-    setInterval(post.setPostsFromDbToMemcached, 5000)
+    setInterval(post.setPostsFromDbToMemcached, 30000)
     // setInterval(() => {
     //     console.log(post.listId)
     // }, 5000)
